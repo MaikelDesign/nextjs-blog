@@ -1,7 +1,7 @@
-import Layout from '../../components/layout';
+import Layout from '../../components/layout/layout.js';
 import { getAllPostIds, getPostData } from '../../lib/posts';
 import Head from 'next/head';
-import Date from '../../components/date';
+import Date from '../../components/date/date.js';
 import utilStyles from '../../styles/utils.module.css';
 
 export async function getStaticProps({ params }) {
