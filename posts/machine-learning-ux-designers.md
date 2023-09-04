@@ -5,28 +5,30 @@ date: '2020-12-13'
 
 To find out why Machine Learning (ML) will play an important role for UX designers, I first briefly explain what ML is.
 
-What is Machine Learning?
+## What is Machine Learning? ##
 
-Machine Learning can be compared to raising a child. A computer, like a child, knows very little at first. By giving the computer different types and large amounts of information about a particular subject, it can learn to recognize a pattern in different ways (https://en.wikipedia.org/wiki/Machine_learning). Just like a child who learns to walk by trial and error, by taking an example from his / her environment, a computer can also learn from a data set in order to eventually learn something.
+Machine Learning can be compared to raising a child. A computer, like a child, knows very little at first. By giving the computer different types and large amounts of information about a particular subject, it can learn to recognize a pattern in different ways ([https://en.wikipedia.org/wiki/Machine_learning](https://en.wikipedia.org/wiki/Machine_learning)). Just like a child who learns to walk by trial and error, by taking an example from his / her environment, a computer can also learn from a data set in order to eventually learn something.
 
 The goal of ML is to be able to recognize data and information, and ultimately be able to make decisions from that or new information.
 
 My article on “A touch of generative interfaces” lists some simple examples of ML that we use or encounter in our daily life.
 
-UX designers are problem solvers
+## UX designers are problem solvers ## 
 
 The main goals for UX designers are solving problems in a certain product due the help of design. A famous method that is being used is Human Centered Design (https://www.invisionapp.com/defined/human-centered-design). A method to build a product around the behaviour and needs of the audience that uses the product.
-Common UX tasks are: 
 
-    Personally Recommended Content.
-    Recognize exceptions.
-    Insights into large amounts of data.
-    Interpret what a user is going to do.
-    Multivariate testing.
-    Recognizing the user’s emotions.
+**Common UX tasks are:**
+
+* Personally Recommended Content.
+* Recognize exceptions.
+* Insights into large amounts of data.
+* Interpret what a user is going to do.
+* Multivariate testing.
+* Recognizing the user’s emotions.
 
 Of course there are many more to mention. But with Multivariate testing we are going to run through an example where ML can support the UX designer.
-Machine learning that is supporting UX designers
+
+## Machine learning that is supporting UX designers ##
 
 Multivariate testing is a way of testing in which multiple possible combinations are tested in order to further develop the combination with the best outcome.
 
@@ -35,7 +37,8 @@ With manual multivariate testing you have to manually create different variants 
 Using Machine learning, a UX designer is able to test the variants with more data points that can influence the outcome. The advantage is that this process is faster and improvements are discovered earlier. In addition, an ML algorithm can continue to optimize without the attention of the UX designer.
 
 When ML is applied for Multivariate Testing, it provides a more efficient workflow for the UX designer. After analysis, the UX designer can still choose a variant that the system did not consider the best, so in that way the UX designer is in control.
-Will Machine Learning replace UX designers?
+
+## Will Machine Learning replace UX designers? ##
 
 This article is too short to explore the full spectrum of the possibilities and risks of ML for the UX designers field. But if we look at the example above, we can say that ML can indeed contribute to solving UX problems.
 
@@ -45,9 +48,9 @@ What I want to say is that systems, processes, products and people change over t
 
 If you are interested in learning more about machine learning, here are some helpful resources:
 
-- https://uxdesign.cc/an-intro-to-machine-learning-for-designers-5c74ba100257
-- https://www.nngroup.com/videos/machine-learning-ux-research-design/
-- https://www.springboard.com/blog/improve-ux-with-ai-machine-learning
-- https://www.lucrative.ai/ai-integration-in-multivariate-testing/
-- https://blog.adobe.com/en/publish/2019/10/01/the-state-of-ai-in-ui-ux-design.html
-- https://www.designerhire.com/ui-ux-designer
+* [An intro to machine learning for designers](https://uxdesign.cc/an-intro-to-machine-learning-for-designers-5c74ba100257)
+* [Machine learning UX research design](https://www.nngroup.com/videos/machine-learning-ux-research-design/)
+* [Improve UX with AI Maching Learning](https://www.springboard.com/blog/improve-ux-with-ai-machine-learning)
+* [AI integration in Multivariate Testing](https://www.lucrative.ai/ai-integration-in-multivariate-testing/)
+* [The state of AI in UI UX design](https://blog.adobe.com/en/publish/2019/10/01/the-state-of-ai-in-ui-ux-design.html)
+* [UI UX Designer](https://www.designerhire.com/ui-ux-designer)

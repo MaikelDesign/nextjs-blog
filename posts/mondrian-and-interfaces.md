@@ -8,7 +8,8 @@ User Interfaces have many shapes and generations. Sometimes you have periods wit
 But something that user interfaces will always consist of is the plane division. This can range from wireframes and abstract surface divisions to graphic tile interfaces such as we know from Microsoft’s Metro style.
 
 In this article we dive into the past of abstract art. And I try to establish a relationship between the abstract art of Piet Mondrian and user interface design.
-Piet Mondrian’s style development.
+
+## Piet Mondrian’s style development. ##
 
 Pieter Mondriaan was a Dutch painter who is regarded as one of the greatest artists of the 20th century.
 
@@ -19,7 +20,8 @@ At the beginning of 1900, Piet’s style began to develop. You started to see th
 In painting this meant that you always painted what arose from yourself (subject, idea, the spiritual). This was also referred to by Mondrian as “internalization”.
 
 “Not a single painting is created by chance. Each painting is a combination of space, surface, line and color. ” — Piet Mondrian
-Interfaces in UI design
+
+## Interfaces in UI design ##
 
 The style and vision of Piet Mondrian seems to correspond with the surface divisions that are designed in the initial phase of an interface design. Also called wireframes.
 
@@ -28,7 +30,8 @@ Wireframes are abstract interpretations of an interface design that is in the ea
 A user interface has an extra dimension: the user. The user uses an interface to achieve his goal and complete the tasks within the interface.
 
 The interface can be divided into areas and lines in such a way that it can attract the user’s attention.
-What does De Stijl mean for UI Designers?
+
+## What does De Stijl mean for UI Designers? ##
 
 A well-known UI design style that we all know is Material (also called Flat) design. Within these guidelines you can see that Mondrian’s work has not gone unnoticed.
 
@@ -38,7 +41,7 @@ You can think of an interface as a multi-layered and context-adaptable work by M
 
 With the exception of a few works by Mondrian, most are bound on a square or rectangular canvas. As long as these rectangular shapes continue to use themselves for the interfaces, we can continue to apply the lessons of Piet Mondrian in these user interfaces.
 
-A little Mondrian in every UI.
+## A little Mondrian in every UI. ##
 
 I’m curious what you think about this as a co-designer? Take a look at yourself and challenge yourself to apply the lessons that Mondrian has taught us all in an interface design.
 
