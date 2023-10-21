@@ -39,12 +39,16 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "echo 'husky pre-commit' && lint-staged && yarn run lint:css"
+      "pre-commit": "lint-staged && yarn run lint:css"
     }
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
       "eslint --fix",
+      "git add"
+    ],
+    "style.{js,jsx,ts,tsx}": [
+      "stylelint --fix",
       "git add"
     ]
   }

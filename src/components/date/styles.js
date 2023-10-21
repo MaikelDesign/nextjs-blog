@@ -12,6 +12,6 @@ export const StyledDate = styled.span`
     `
         // color: red;
         // text-decoration: underline;
-        // padding: .2rem;
+        // padding: .2rem; 
         `};
 `
