@@ -1,22 +1,23 @@
 {
-    "extends": "stylelint-config-standard",
-    "rules": {
-      "at-rule-no-unknown": null,
-      "declaration-block-no-duplicate-properties": true,
-      "declaration-no-important": true,
-      "declaration-property-value-no-unknown": true,
-      "no-descending-specificity": null,
-      "property-no-vendor-prefix": [true, { "ignoreProperties": ["background-clip"] }],
-      "selector-max-compound-selectors": 3,
-      "selector-max-id": 0,
-      "selector-no-vendor-prefix": true,
-      "selector-no-qualifying-type": [
-        true,
-        {
-          "ignore": ["attribute"]
-        }
-      ]
-    },
-    "ignoreFiles": ["node_modules", "**/*.test.ts", "**/*.test.tsx", "**/*.test.js", "**/*.test.jsx"]
+  "customSyntax": "postcss-styled-syntax",
+  "extends": ["stylelint-config-prettier"],
+  "rules": {
+    "at-rule-no-unknown": null,
+    "declaration-block-no-duplicate-properties": true,
+    "declaration-no-important": true,
+    "declaration-property-value-no-unknown": true,
+    "no-descending-specificity": null,
+    "property-no-vendor-prefix": [true, { "ignoreProperties": ["background-clip"] }],
+    "selector-max-compound-selectors": 3,
+    "selector-max-id": 0,
+    "selector-no-vendor-prefix": true,
+    "selector-no-qualifying-type": [
+      true,
+      {
+        "ignore": ["attribute"]
+      }
+    ]
+  },
+  "ignoreFiles": ["node_modules", "**/*.test.ts", "**/*.test.tsx", "**/*.test.js", "**/*.test.jsx"]
   }
   

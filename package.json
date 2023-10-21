@@ -4,8 +4,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "lint": "next lint",
     "lint:css": "stylelint './src/**/style.js'",
-    "lint:js": "eslint --ext .js,.jsx,.ts,.tsx --max-warnings 15 --config .eslintrc.test.js src test"
+    "lint:js": "eslint --ext .js,.jsx,.ts,.tsx --max-warnings 15 --config .eslintrc.test.js src test",
+    "prettier:fix": "prettier --write '**/*.{js,jsx,css,scss}'",
+    "fix:all": "yarn run lint:css && yarn run prettier:fix",
+    "prepare": "husky install"
   },
   "dependencies": {
     "date-fns": "^2.29.3",
@@ -26,8 +30,12 @@
     "eslint-plugin-react": "^7.33.2",
     "husky": "^8.0.3",
     "lint-staged": "^15.0.2",
+    "postcss-styled-syntax": "^0.5.0",
+    "prettier": "^3.0.3",
     "stylelint": "^15.11.0",
-    "stylelint-config-standard": "^34.0.0"
+    "stylelint-config-prettier": "^9.0.5",
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-processor-styled-components": "^1.10.0"
   },
   "husky": {
     "hooks": {

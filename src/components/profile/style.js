@@ -1,7 +1,15 @@
-import styled, {css} from 'styled-components'
+import styled from 'styled-components'
 
-export const StyledContainer = styled.div(
-	() => css`
-        background: 10px;
-    `
-)
+// Missing semicolon, incorrect indentation, and invalid color value
+export const Container = styled.div`
+  background-color: #fff;
+  color: #fff;
+  font-size: 18px;
+`
+
+// Unnecessary empty line and missing semicolon
+export const Button = styled.button`
+  background-color: blue;
+  color: white;
+  padding: 10px;
+`

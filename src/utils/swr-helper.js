@@ -1,3 +1,5 @@
-import useSWR from 'swr'
+// import useSWR from 'swr'
 
-export default function fetcher(...args) { fetch(...args).then(res => res.json())};
+// export default function fetcher(...args) {
+//   fetch(...args).then((res) => res.json())
+// }
