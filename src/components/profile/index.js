@@ -1,7 +1,7 @@
 import useSWR from 'swr'
 import fetcher from '../../utils/swr-helper'
 
-const name = 'string'
+const name = 'string';
 
 export default function Profile() {
 
