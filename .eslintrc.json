@@ -30,6 +30,13 @@
         "semi": [
             "error",
             "never"
-        ]
-    }
+        ],
+        "react/react-in-jsx-scope": "off"
+    },
+    "settings": {
+        "react": {
+          "version": "17.0.0", // specify React version
+          "runtime": "automatic" // specify JSX runtime
+        }
+      }
 }
