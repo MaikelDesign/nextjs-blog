@@ -1,6 +1,8 @@
 import useSWR from 'swr'
 import fetcher from '../../utils/swr-helper'
 
+// const test = 'test'
+
 export default function Profile() {
 
 	const { data, error } = useSWR('/api/profile-data', fetcher)

@@ -3,7 +3,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint:css": "stylelint './src/**/style.js'",
+    "lint:js": "eslint --ext .js,.jsx,.ts,.tsx --max-warnings 15 --config .eslintrc.test.js src test"
   },
   "dependencies": {
     "date-fns": "^2.29.3",
@@ -23,11 +25,13 @@
     "eslint": "^8.52.0",
     "eslint-plugin-react": "^7.33.2",
     "husky": "^8.0.3",
-    "lint-staged": "^15.0.2"
+    "lint-staged": "^15.0.2",
+    "stylelint": "^15.11.0",
+    "stylelint-config-standard": "^34.0.0"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "echo 'husky pre-commit' && lint-staged"
+      "pre-commit": "echo 'husky pre-commit' && lint-staged && yarn run lint:css"
     }
   },
   "lint-staged": {
