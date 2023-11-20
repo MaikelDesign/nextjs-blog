@@ -1,49 +1,57 @@
 // import parseXML from '../../utils/xml-parser'
 import { useState, useEffect } from 'react'
-import xml2js from 'xml2js'
+import { parseString } from 'xml2js'
 
-
-
-export async function getServerSideProps() {
-  const res = await fetch('https://medium.com/feed/@maikelvbk')
-  console.log('res:',res)
-  const xmlData = await res.text()
-  console.log('xmlData:',xmlData)
-  return {
-    props: {
-      xmlData
-    }
-  }
-}
-
-async function parseXML(xml) {
-  return new Promise((resolve, reject) => {
-    xml2js.parseString(xml, (error, result) => {
-      if (error) {
-        reject(error)
-      } else {
-        resolve(result)
-      }
-    })
-  })
-}
-
-const MediumPosts = ({xmlData}) => {
-  console.log('component loaded')
+const MediumPosts = () => {
   const [parsedData, setParsedData] = useState(null)
-  console.log('mediumPosts:',xmlData)
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const jsonData = await parseXML(xmlData)
-        setParsedData(jsonData)
+
+        const parseStringCallback = (err, res) => {
+          if (err) {
+            console.warn('err', err)
+          } else {
+            const entries = res.rss.channel[0].item.map((item) => {
+              console.log(item)
+              return item.title
+              // return cleanParsedXMLEntry(item)
+            })
+            console.info('entries', entries)
+          }
+        }
+
+        const corsProxy = 'https://cors.eu.org/'
+        const res = await fetch(corsProxy + 'https://medium.com/feed/@maikelvbk')
+          .then((res) => res.text()
+            .then((data) => parseString(data, parseStringCallback))
+            .catch((err) => console.warn('data err', err))
+            .finally(() => console.info('data complete')))
+          .catch((err) => console.warn('res err', err))
+          .finally(() => console.info('res complete'))
+
+        // const cleanParsedXMLEntry = (entry) => {
+        //   const media = entry['media:group'][0]
+        //   return {
+        //     author: entry.author[0].name[0],
+        //     id: entry['yt:videoId'][0],
+        //     link: entry.link[0].$.href,
+        //     name: entry.title[0],
+        //     publishDate: entry.published[0],
+        //     thumbnailUrl: media['media:thumbnail'][0].$.url,
+        //   }
+        // }
+
+        console.log(res)
+        setParsedData(res)
+        
       } catch (e) {
         console.error('Error parsing XML:', e)
       }
     }
 
     fetchData()
-  }, [xmlData])
+  }, [])
 
   if (!parsedData) return <div>Loading...</div>
 
