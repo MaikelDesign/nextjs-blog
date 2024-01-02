@@ -47,12 +47,12 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-      "git add"
+      "eslint --fix"
+      
     ],
     "style.{js,jsx,ts,tsx}": [
-      "stylelint --fix",
-      "git add"
+      "stylelint --fix"
+      
     ]
   }
 }
