@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { StyledMain } from './style'
+import Analytics from '@vercel/analytics/react'
 
 
 export default function DefaultTemplate({children}){
@@ -10,6 +11,7 @@ export default function DefaultTemplate({children}){
       </Head>
       <StyledMain>
         {children}
+        <Analytics />
       </StyledMain>
     </>    
   )
