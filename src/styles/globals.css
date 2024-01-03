@@ -16,6 +16,7 @@ body {
     sans-serif;
   line-height: 1.6;
   font-size: 18px;
+  background-color: #101010;
 }
 
 * {
@@ -23,12 +24,20 @@ body {
 }
 
 a {
-  color: #0070f3;
-  text-decoration: none;
+  color: #707070;
+  text-decoration: underline;
 }
 
 a:hover {
   text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: white;
+}
+
+p {
+  color: #707070
 }
 
 img {

@@ -1,10 +1,9 @@
 import Head from 'next/head'
-import { StyledMain } from './style'
-import Image from 'next/image'
+import { StyledMain, StyledLayout, StyledPageContent } from './style'
 import Link from 'next/link'
+import NavSideBar from '../components/sidebar'
 // import Analytics from '@vercel/analytics/react'
 
-const name = 'Maikel Verbeek'
 export const siteTitle = 'Next.js Sample Website'
 
 export default function DefaultTemplate({children, home}){
@@ -26,46 +25,20 @@ export default function DefaultTemplate({children, home}){
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header >
-        {home ? (
-          <>
-            <Image
-              priority
-              src="/images/profile.jpg"
-              height={144}
-              width={144}
-              alt=""
-            />
-            <h1>{name}</h1>
-          </>
-        ) : (
-          <>
-            <Link href="/">
-              <Image
-                priority
-                src="/images/profile.jpg"
-                height={108}
-                width={108}
-                alt=""
-              />
-            </Link>
-            <h2>
-              <Link href="/" >
-                {name}
-              </Link>
-            </h2>
-          </>
-        )}
-      </header>
-      <StyledMain>
-        {children}
-        {/* <Analytics /> */}
-      </StyledMain>
-      {!home && (
-        <div >
-          <Link href="/">← Back to home</Link>
-        </div>
-      )}
+      <StyledLayout>
+        <NavSideBar/>
+        <StyledPageContent>
+          <StyledMain>
+            {children}
+            {/* <Analytics /> */}
+          </StyledMain>
+          {!home && (
+            <div >
+              <Link href="/">← Back to home</Link>
+            </div>
+          )}
+        </StyledPageContent>
+      </StyledLayout>
     </>    
   )
 }
