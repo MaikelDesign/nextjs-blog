@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+        
+            <url>
+                <loc>https://www.maikelverbeek.com/</loc>
+                <changefreq>daily</changefreq>
+                <priority>0.7</priority>
+            </url>
+        
+            <url>
+                <loc>https://www.maikelverbeek.com/posts/a-touch-of-generative-interfaces</loc>
+                <changefreq>weekly</changefreq>
+                <priority>0.5</priority>
+            </url>
+        
+            <url>
+                <loc>https://www.maikelverbeek.com/posts/design-system-oriented-approach</loc>
+                <changefreq>weekly</changefreq>
+                <priority>0.5</priority>
+            </url>
+        
+            <url>
+                <loc>https://www.maikelverbeek.com/posts/machine-learning-ux-designers</loc>
+                <changefreq>weekly</changefreq>
+                <priority>0.5</priority>
+            </url>
+        
+            <url>
+                <loc>https://www.maikelverbeek.com/posts/mondrian-and-interfaces</loc>
+                <changefreq>weekly</changefreq>
+                <priority>0.5</priority>
+            </url>
+        
+    </urlset>
+    

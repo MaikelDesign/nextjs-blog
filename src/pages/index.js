@@ -12,6 +12,7 @@ export async function getStaticProps() {
   }
 }
 
+
 export default function Index({ allPostsData }) {
   return (
     <DefaultTemplate home>
