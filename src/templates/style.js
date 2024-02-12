@@ -1,15 +1,15 @@
 import styled from 'styled-components'
 
 export const StyledMain = styled.main`
-  position: relative;
-  scrollbar-gutter: stable;
 `
 
 export const StyledLayout = styled.div`
   display: flex;
+  flex-direction: row;
+  align-items: flex-start;
   min-height: 100vh;
 `
 
 export const StyledPageContent = styled.div`
-  flex-grow: 1;
+  flex: 3;
 `
