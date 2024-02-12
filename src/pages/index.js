@@ -12,10 +12,9 @@ export async function getStaticProps() {
   }
 }
 
-
 export default function Index({ allPostsData }) {
   return (
-    <DefaultTemplate home>
+    <DefaultTemplate page="home">
       <section>
         <h1>Design. Tech. Humans.</h1>
         <p>A little blog with short stories based on exprience, knowledge and thoughts.</p>

@@ -4,12 +4,10 @@ import Image from 'next/image'
 
 const name = 'Maikel Verbeek'
 
-
 const NavSideBar = () => {
   return (
     <StyledNav>
       <header >
-       
         <>
           <Link href="/">
             <Image
@@ -21,7 +19,7 @@ const NavSideBar = () => {
             />
           </Link>
           <h2>
-            <StyledLink href="/" >
+            <StyledLink href="/">
               {name}
             </StyledLink>
           </h2>
@@ -30,7 +28,13 @@ const NavSideBar = () => {
       </header>
       <ul>
         <li>
-          <StyledLink href="#">Home</StyledLink>
+          <StyledLink href="/">Home</StyledLink>
+        </li>
+        <li>
+          <StyledLink href="/about">About</StyledLink>
+        </li>
+        <li>
+          <StyledLink href="/contact">Contact</StyledLink>
         </li>
       </ul>
     </StyledNav>

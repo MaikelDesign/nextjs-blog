@@ -7,9 +7,8 @@ export const StyledNav = styled.nav`
     height: 100vh;
     padding: 2rem;
 `
-
 export const StyledLink = styled(Link)(
   () => css`
-    color: white;
-`
+   color: white;
+    `
 )

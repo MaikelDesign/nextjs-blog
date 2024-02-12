@@ -6,7 +6,7 @@ import NavSideBar from '../components/sidebar'
 
 export const siteTitle = 'Next.js Sample Website'
 
-export default function DefaultTemplate({children, home}){
+export default function DefaultTemplate({children, page}){
   return(
     <>
       <Head>
@@ -32,10 +32,8 @@ export default function DefaultTemplate({children, home}){
             {children}
             {/* <Analytics /> */}
           </StyledMain>
-          {!home && (
-            <div >
-              <Link href="/">← Back to home</Link>
-            </div>
+          {page !== 'home' && (
+            <Link href="/">← Back to home</Link>
           )}
         </StyledPageContent>
       </StyledLayout>
