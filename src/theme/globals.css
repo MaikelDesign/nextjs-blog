@@ -1,0 +1,58 @@
+@font-face {
+  font-family: 'wotfard';
+  src: url('/fonts/wotfard-regular-webfont.eot');
+  src: url('/fonts/wotfard-regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/wotfard-regular-webfont.woff2') format('woff2'),
+       url('/fonts/wotfard-regular-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family:
+    "wotfard",
+    sans-serif,
+    /* -apple-system, */
+    /* BlinkMacSystemFont, */
+    /* Segoe UI, */
+    /* Roboto, */
+    /* Oxygen, */
+    /* Ubuntu, */
+    /* Cantarell, */
+    /* Fira Sans, */
+    /* Droid Sans, */
+    Helvetica Neue;
+  line-height: 1.6;
+  font-size: 18px;
+  background-color: #101010;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: #707070;
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: white;
+}
+
+p {
+  color: #707070
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
