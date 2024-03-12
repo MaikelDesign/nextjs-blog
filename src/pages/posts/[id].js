@@ -3,7 +3,7 @@ import { getPostData } from '../../utils/get-post-data'
 import Head from 'next/head'
 import Date from '../../components/date/index.js'
 import DefaultTemplate from '../../templates/default.js'
-import { StyledContentContainer } from './style'
+import StyledContentContainer from '../../components/styledContentContainer/index.js'
 
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id)
@@ -33,7 +33,7 @@ export default function Post({ postData }) {
         <div>
           <Date dateString={postData.date} />
         </div>  
-        <StyledContentContainer dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        <StyledContentContainer htmlContent={postData.contentHtml} />
       </article>
     </DefaultTemplate>
   )
