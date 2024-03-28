@@ -20,7 +20,7 @@ export default function Index({ allPostsData }) {
         <p>A little blog with short stories based on exprience, knowledge and thoughts.</p>
       </section>
       <section>
-        <h2 >Blog</h2> 
+        <h2>Blog</h2>
         <ul>
           {allPostsData.map(({ id, date, title }) => (
             <li key={id}>

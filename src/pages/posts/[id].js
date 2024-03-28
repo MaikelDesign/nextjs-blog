@@ -32,7 +32,7 @@ export default function Post({ postData }) {
         <h1>{postData.title}</h1>
         <div>
           <Date dateString={postData.date} />
-        </div>  
+        </div>
         <StyledContentContainer htmlContent={postData.contentHtml} />
       </article>
     </DefaultTemplate>

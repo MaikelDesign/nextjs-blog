@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components'
 
-export const StyledMain = styled.main`
-`
+export const StyledMain = styled.main``
 
 export const StyledLayout = styled.div`
   display: flex;
@@ -12,16 +11,16 @@ export const StyledLayout = styled.div`
 `
 
 export const StyledPageContent = styled.div(
-  ({ theme: { SPACINGS }}) => css`
+  ({ theme: { SPACINGS } }) => css`
     flex: 3;
     background: black;
-    border-radius: ${SPACINGS.SM};
-    margin: ${SPACINGS.SM};
+    border-radius: ${SPACINGS.XS};
+    margin: ${SPACINGS.XS};
     padding: ${SPACINGS.MD};
     height: calc(100vh - 1.6rem);
     overflow-y: scroll;
     &::-webkit-scrollbar {
       display: none;
     }
-`
+  `,
 )

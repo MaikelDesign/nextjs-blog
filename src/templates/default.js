@@ -6,16 +6,13 @@ import NavSideBar from '../components/sidebar'
 
 export const siteTitle = 'Next.js Sample Website'
 
-export default function DefaultTemplate({children, page}){
-  return(
+export default function DefaultTemplate({ children, page }) {
+  return (
     <>
       <Head>
         <title>Maikel Verbeek</title>
         <link rel="icon" href="/favicon.ico" />
-        <meta
-          name="description"
-          content="Learn how to build a personal website using Next.js"
-        />
+        <meta name="description" content="Learn how to build a personal website using Next.js" />
         <meta
           property="og:image"
           content={`https://og-image.vercel.app/${encodeURI(
@@ -26,17 +23,15 @@ export default function DefaultTemplate({children, page}){
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <StyledLayout>
-        <NavSideBar/>
+        <NavSideBar />
         <StyledPageContent>
           <StyledMain>
             {children}
             {/* <Analytics /> */}
           </StyledMain>
-          {page !== 'home' && (
-            <Link href="/">← Back to home</Link>
-          )}
+          {page !== 'home' && <Link href="/">← Back to home</Link>}
         </StyledPageContent>
       </StyledLayout>
-    </>    
+    </>
   )
 }

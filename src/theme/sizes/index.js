@@ -6,4 +6,11 @@ const SPACINGS = {
   XL: '6.4rem',
 }
 
-export { SPACINGS }
+const SIZES = {
+  SM: '1.2rem',
+  MD: '1.6rem',
+  LG: '2.0rem',
+  XL: '2.4rem',
+}
+
+export { SPACINGS, SIZES }

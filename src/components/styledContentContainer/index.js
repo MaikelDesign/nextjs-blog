@@ -1,4 +1,3 @@
-
 // add dangerouslySetInnerHTML to the component
 
 export default function StyledContentContainer({ htmlContent }) {
