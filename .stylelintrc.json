@@ -1,6 +1,5 @@
 {
   "customSyntax": "postcss-styled-syntax",
-  "extends": ["stylelint-config-prettier"],
   "rules": {
     "at-rule-no-unknown": null,
     "declaration-block-no-duplicate-properties": true,

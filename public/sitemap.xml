@@ -2,7 +2,19 @@
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
         
             <url>
-                <loc>https://www.maikelverbeek.com/</loc>
+                <loc>https://www.maikelverbeek.comsrc/pages</loc>
+                <changefreq>daily</changefreq>
+                <priority>0.7</priority>
+            </url>
+        
+            <url>
+                <loc>https://www.maikelverbeek.comsrc/pages/contact</loc>
+                <changefreq>daily</changefreq>
+                <priority>0.7</priority>
+            </url>
+        
+            <url>
+                <loc>https://www.maikelverbeek.comsrc/pages/about</loc>
                 <changefreq>daily</changefreq>
                 <priority>0.7</priority>
             </url>
