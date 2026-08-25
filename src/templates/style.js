@@ -13,11 +13,11 @@ export const StyledLayout = styled.div`
 export const StyledPageContent = styled.div(
   ({ theme: { SPACINGS } }) => css`
     flex: 3;
-    background: black;
+    background: #101010;
     border-radius: ${SPACINGS.XS};
     margin: ${SPACINGS.XS};
     padding: ${SPACINGS.MD};
-    height: calc(100vh - 1.6rem);
+    height: calc(100vh - ${SPACINGS.XS} * 2);
     overflow-y: scroll;
     &::-webkit-scrollbar {
       display: none;

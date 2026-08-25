@@ -1,5 +1,4 @@
-import Link from 'next/link'
-import { StyledNav, StyledLink, StyledHeader2, StyledImage, StyledNavItemsList } from './style'
+import { StyledNav, StyledLink, StyledHeader2, StyledImage, StyledNavItemsList, StyledImageLink } from './style'
 
 const name = 'Maikel Verbeek'
 
@@ -8,9 +7,9 @@ const NavSideBar = () => {
     <StyledNav>
       <header>
         <>
-          <Link href="/">
+          <StyledImageLink href="/">
             <StyledImage priority src="/images/profile.jpg" height={108} width={108} alt="" />
-          </Link>
+          </StyledImageLink>
           <StyledHeader2>
             <StyledLink href="/">{name}</StyledLink>
           </StyledHeader2>
