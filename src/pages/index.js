@@ -213,9 +213,9 @@ const bodyStyle = {
 
 function Home() {
   return (
-    <div style={panelStyle}>
+    <div style={{ ...panelStyle, padding: '0 clamp(5rem, 8vw, 12rem)' }}>
       <span style={eyebrowStyle}>Portfolio</span>
-      <h1 style={{ ...headingStyle, fontSize: 'clamp(4rem, 10vw, 9rem)' }}>
+      <h1 style={{ ...headingStyle, fontSize: 'clamp(3rem, 10vw, 9rem)' }}>
         Maikel
       </h1>
       <p style={bodyStyle}>Design. Tech. Humans.</p>
@@ -237,7 +237,7 @@ function About() {
 
 function Work({ contentRef }) {
   return (
-    <div style={{ ...panelStyle, maxWidth: '900px', margin: '0 auto', width: '100%' }}>
+    <div style={{ ...panelStyle, padding: '0 clamp(5rem, 8vw, 12rem)', maxWidth: '900px', margin: '0 auto', width: '100%' }}>
       <div ref={contentRef}>
         <span style={eyebrowStyle}>02 — Work</span>
         <h2 style={headingStyle}>Work</h2>
@@ -336,7 +336,7 @@ function Blog({ posts, activePost, setActivePost }) {
 
 function Contact({ contentRef }) {
   return (
-    <div style={{ ...panelStyle, maxWidth: '900px', margin: '0 auto', width: '100%' }}>
+    <div style={{ ...panelStyle, padding: '0 clamp(5rem, 8vw, 12rem)', maxWidth: '900px', margin: '0 auto', width: '100%' }}>
       <div ref={contentRef}>
         <span style={eyebrowStyle}>04 — Contact</span>
         <h2 style={headingStyle}>Contact</h2>
