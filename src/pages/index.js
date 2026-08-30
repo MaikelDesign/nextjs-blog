@@ -40,6 +40,7 @@ function getPos(panel) {
 
 export default function Portfolio({ allPostsData }) {
   const trackRef = useRef(null)
+  const slideRefs = useRef({})
   const workContentRef = useRef(null)
   const contactContentRef = useRef(null)
   const [current, setCurrent] = useState('home')
@@ -50,20 +51,20 @@ export default function Portfolio({ allPostsData }) {
     gsap.set(trackRef.current, getPos('home'))
   }, [])
 
-  // Animate panel content horizontally when arriving at Work or Contact
+  // Horizontal slide-in for Work and Contact content
   useEffect(() => {
     if (current === 'work' && workContentRef.current) {
       gsap.fromTo(
         workContentRef.current,
-        { x: 80, autoAlpha: 0 },
-        { x: 0, autoAlpha: 1, duration: 0.8, ease: 'power3.out', delay: 0.85 }
+        { x: 60, autoAlpha: 0 },
+        { x: 0, autoAlpha: 1, duration: 0.7, ease: 'power3.out', delay: 0.7 }
       )
     }
     if (current === 'contact' && contactContentRef.current) {
       gsap.fromTo(
         contactContentRef.current,
-        { x: -80, autoAlpha: 0 },
-        { x: 0, autoAlpha: 1, duration: 0.8, ease: 'power3.out', delay: 0.85 }
+        { x: -60, autoAlpha: 0 },
+        { x: 0, autoAlpha: 1, duration: 0.7, ease: 'power3.out', delay: 0.7 }
       )
     }
   }, [current])
@@ -73,12 +74,23 @@ export default function Portfolio({ allPostsData }) {
     setBusy(true)
     setCurrent(panel)
     if (panel !== 'blog') setActivePost(null)
-    gsap.to(trackRef.current, {
-      ...getPos(panel),
-      duration: 1.2,
-      ease: 'power3.inOut',
-      onComplete: () => setBusy(false),
-    })
+
+    const from = slideRefs.current[current]
+    const to = slideRefs.current[panel]
+
+    // Destination starts invisible
+    if (to) gsap.set(to, { autoAlpha: 0 })
+
+    const tl = gsap.timeline({ onComplete: () => setBusy(false) })
+
+    // Fade out current panel
+    if (from) tl.to(from, { autoAlpha: 0, duration: 0.3, ease: 'power2.in' })
+
+    // Slide track (starts at t=0, runs in parallel)
+    tl.to(trackRef.current, { ...getPos(panel), duration: 1.1, ease: 'power3.inOut' }, 0)
+
+    // Fade in destination panel near the end of the slide
+    if (to) tl.to(to, { autoAlpha: 1, duration: 0.45, ease: 'power2.out' }, '-=0.4')
   }
 
   const nav = NAV_MAP[current] || {}
@@ -89,11 +101,11 @@ export default function Portfolio({ allPostsData }) {
       <div style={{ position: 'fixed', inset: 0, overflow: 'hidden', background: '#0d0d0d' }}>
         {/* Scrollable world: 3×3 panel grid */}
         <div ref={trackRef} style={{ position: 'absolute', width: '300vw', height: '300vh' }}>
-          <Slide l="100vw" t="100vh"><Home /></Slide>
-          <Slide l="100vw" t="0"><About /></Slide>
-          <Slide l="100vw" t="200vh"><Blog posts={allPostsData} activePost={activePost} setActivePost={setActivePost} /></Slide>
-          <Slide l="200vw" t="100vh"><Work contentRef={workContentRef} /></Slide>
-          <Slide l="0"     t="100vh"><Contact contentRef={contactContentRef} /></Slide>
+          <Slide l="100vw" t="100vh" slideRef={el => slideRefs.current['home'] = el}><Home /></Slide>
+          <Slide l="100vw" t="0"     slideRef={el => slideRefs.current['about'] = el}><About /></Slide>
+          <Slide l="100vw" t="200vh" slideRef={el => slideRefs.current['blog'] = el}><Blog posts={allPostsData} activePost={activePost} setActivePost={setActivePost} /></Slide>
+          <Slide l="200vw" t="100vh" slideRef={el => slideRefs.current['work'] = el}><Work contentRef={workContentRef} /></Slide>
+          <Slide l="0"     t="100vh" slideRef={el => slideRefs.current['contact'] = el}><Contact contentRef={contactContentRef} /></Slide>
         </div>
       </div>
 
@@ -111,19 +123,19 @@ export default function Portfolio({ allPostsData }) {
   )
 }
 
-function Slide({ l, t, children }) {
+function Slide({ l, t, slideRef, children }) {
   return (
-    <div style={{ position: 'absolute', left: l, top: t, width: '100vw', height: '100vh', overflow: 'hidden' }}>
+    <div ref={slideRef} style={{ position: 'absolute', left: l, top: t, width: '100vw', height: '100vh', overflow: 'hidden' }}>
       {children}
     </div>
   )
 }
 
 const BTN_POS = {
-  top:    { top: '2rem',    left: '50%',  transform: 'translateX(-50%)', flexDirection: 'column', alignItems: 'center' },
-  bottom: { bottom: '2rem', left: '50%',  transform: 'translateX(-50%)', flexDirection: 'column-reverse', alignItems: 'center' },
-  right:  { top: '50%',    right: '2rem', transform: 'translateY(-50%)' },
-  left:   { top: '50%',    left: '2rem',  transform: 'translateY(-50%)' },
+  top:    { top: '1.5rem',   left: '50%', transform: 'translateX(-50%)',               flexDirection: 'column',         alignItems: 'center' },
+  bottom: { bottom: '1.5rem',left: '50%', transform: 'translateX(-50%)',               flexDirection: 'column-reverse', alignItems: 'center' },
+  right:  { top: '50%',     right: '0',   transform: 'translateY(-50%) rotate(90deg)'  },
+  left:   { top: '50%',     left: '0',    transform: 'translateY(-50%) rotate(-90deg)' },
 }
 
 function NavBtn({ dir, onClick, children }) {
@@ -142,7 +154,8 @@ function NavBtn({ dir, onClick, children }) {
     letterSpacing: '0.2em',
     textTransform: 'uppercase',
     transition: 'color 0.3s',
-    padding: '0.75rem',
+    padding: isVertical ? '0.25rem 0.75rem' : '0.75rem',
+    whiteSpace: 'nowrap',
     ...BTN_POS[dir],
   }
 
@@ -154,13 +167,7 @@ function NavBtn({ dir, onClick, children }) {
       onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.3)'}
     >
       {isVertical ? (
-        // Vertical label: left reads bottom→top, right reads top→bottom
-        <span style={{
-          writingMode: 'vertical-rl',
-          transform: dir === 'left' ? 'rotate(180deg)' : 'none',
-        }}>
-          {children}
-        </span>
+        <span>{children}</span>
       ) : (
         <>
           <span>{ARROWS[dir]}</span>
@@ -315,7 +322,7 @@ function Blog({ posts, activePost, setActivePost }) {
               >
                 <div
                   className="blog-article"
-                  style={{ background: '#f0efed', padding: '3rem 8vw 3.5rem' }}
+                  style={{ background: '#161616', padding: '3rem 8vw 3.5rem' }}
                   dangerouslySetInnerHTML={{ __html: contentHtml }}
                 />
               </div>
