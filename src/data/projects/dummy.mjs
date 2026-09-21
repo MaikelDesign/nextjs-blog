@@ -1,0 +1,17 @@
+// Shared filler for the sample projects. Delete this file once every project has real content.
+export const LOREM = [
+  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+  'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+  'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+]
+
+export const credits = (field) => [
+  { label: 'Role', value: 'Creative Director & Designer' },
+  {
+    label: 'Team',
+    value: 'DESIGN: Jane Doe, John Smith / STRATEGY: Alex Example / PM: Sam Sample',
+  },
+  { label: 'Client team', value: 'Client Person One, Client Person Two' },
+  { label: 'Field', value: field },
+  { label: 'Published', value: 'January 2025' },
+]
